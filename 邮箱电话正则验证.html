@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var email=prompt("请输入您的邮箱");
+		var mobile=prompt("请输入您手机号");
+		var rege=/^\w+@\w+((\.\w{2,3}){1})$/;
+		var regm=/^(13[0-9])|(18[0-9])|(15[0-9])+\d{8}$/;
+		if (rege.test(email)==true&&regm.test(mobile)==true){
+			alert("提交成功");
+		}
+		if (rege.test(email)==false&&regm.test(mobile)==true){
+			alert("邮箱都是错的还想上网")
+		}
+		if (rege.test(email)==true&&regm.test(mobile)==false){
+			alert("手机号都记不住还有脸上网")
+		}
+		if (rege.test(email)==false&&regm.test(mobile)==false){
+			alert("啥都不知道你来搞笑的吗");
+		}
+	</script>
+</html>
