@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;list-style: none;}
+        .l3{width:200px;}
+        .l3 li{float:left;width:60px;height:30px;background:#ccc;color:#fff;text-align:center;line-height:30px;cursor:pointer; }
+       	div{width:178px;height:200px;border:1px solid #ccc;display:none;}
+        .on{display:block;font-size: 30px;}
+        .l3 li.sex{background:blue;}
+        .l4{width:200px;}
+        .l4 li{float:left;width:60px;height:30px;background:#ccc;color:#fff;text-align:center;line-height:30px;cursor:pointer; }
+		 .l4 li.sex{background: cornflowerblue;}
+		</style>
+	</head>
+	<body>
+		<ul class="l3">
+       <li class="sex">1</li>
+       <li>2</li>
+       <li>3</li>
+ </ul>
+ <div class="on">我是第一个</div>
+ <div>我是第二个</div>
+ <div>我是第三个</div>
+ 	<ul class="l4">
+       <li class="sex">1</li>
+       <li>2</li>
+       <li>3</li>
+	</body>
+	<script type="text/javascript">
+		
+        $(".l3 li").click(function(){
+        	console.log($(this).index());
+        $(".l3 li").eq($(this).index()).addClass("sex").siblings().removeClass('sex');
+        $("div").eq($(".l3 li").index(this)).addClass("on").siblings().removeClass('on'); 
+        });
+        
+         $(".l4 li").mouseenter(function(){
+        	console.log($(this).index());
+        $(".l4 li").eq($(this).index()).addClass("sex").siblings().removeClass('sex');
+        $("div").eq($(".l4 li").index(this)).addClass("on").siblings().removeClass('on'); 
+        });
+	</script>
+</html>
